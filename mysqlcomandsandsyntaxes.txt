@@ -1,0 +1,36 @@
+product
+pid name brand price color
+
+user
+uid, name phone email 
+
+user
+uid  name phone email age weight
+
+create table product (
+    `pid` int,
+    `name` varchar(256),
+    `brand` varchar(256),
+    `price` int,
+    `color` varchar(256),
+    `ratings` float);
+
+    create table user(`uid` int primary key auto_increment,`name` varchar(256),`phone` varchar(16),`email` varchar(256));
+
+    alter table user add age int; for added extra column example
+
+    alter table user drop age; for deleted extra column example
+
+drop database estore; for delete databases
+
+drop table user; for delete table from database
+
+data insertion in a table
+ insert into  user values (null,'srinivasarao',8978968604,'sri.naresh1@gmail.com');
+ insert into  user values (null,'gopi',9618352471,'gopibathina@gmail.com');
+ insert into  user values (null,'sravani',9618352472,'sravanibathina@gmail.com');
+ insert into  user values (null,'murali krishna',9948236579,'muralikrishna@gmail.com');
+
+insert into  user values (null,'varshini',9553487855,'gopibathina@gmail.com');
+ insert into  user values (null,'pavani',9948236579,'sravanibathina@gmail.com');
+ insert into  user values (null,'hymavathi',9912684660,'muralikrishna@gmail.com');
