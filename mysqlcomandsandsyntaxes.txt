@@ -15,7 +15,7 @@ create table product (
     `color` varchar(256),
     `ratings` float);
 
-    create table user(`uid` int primary key auto_increment,`name` varchar(256),`phone` varchar(16),`email` varchar(256));
+    create table user(`uid` int primary key auto_increment,`name` varchar(256),`phone` varchar(16),`email` varchar(256),`age` int,`location`varchar(256));
 
     alter table user add age int; for added extra column example
 
@@ -26,11 +26,79 @@ drop database estore; for delete databases
 drop table user; for delete table from database
 
 data insertion in a table
- insert into  user values (null,'srinivasarao',8978968604,'sri.naresh1@gmail.com');
- insert into  user values (null,'gopi',9618352471,'gopibathina@gmail.com');
- insert into  user values (null,'sravani',9618352472,'sravanibathina@gmail.com');
- insert into  user values (null,'murali krishna',9948236579,'muralikrishna@gmail.com');
+ insert into  user values (null,'srinivasarao',8978968604,'sri.naresh1@gmail.com',48,'kspd','mallela');
+ insert into  user values (null,'gopi',9618352471,'gopibathina@gmail.com',27,'kspd','bathina');
+ insert into  user values (null,'sravani',9618352472,'sravanibathina@gmail.com',21,'piduguralla','bathina');
+ insert into  user values (null,'murali krishna',9948236579,'muralikrishna@gmail.com'37,'kspd','sidhamsetti');
 
-insert into  user values (null,'varshini',9553487855,'gopibathina@gmail.com');
- insert into  user values (null,'pavani',9948236579,'sravanibathina@gmail.com');
- insert into  user values (null,'hymavathi',9912684660,'muralikrishna@gmail.com');
+insert into  user values (null,'varshini',9553487855,'gopibathina@gmail.com',10,'kspd','mallela');
+ insert into  user values (null,'pavani',9948236579,'sravanibathina@gmail.com',8,'kspd','mallela');
+ insert into  user values (null,'hymavathi',9912684660,'muralikrishna@gmail.com',48,'nandhirajupalem','mallela');
+
+
+desc table_name;  for see the properties of table
+ex: desc user;
+
+select*from table_name;
+ex: select*from user; for see the content which is inserted in table.
+
+update table_name set column=value column value where condition applied
+ex: update user set phone='9553487855', email='sri.naresh1@gmail.com' where uid=8;
+
+delete from table_name where condition;
+ex: delete from user where uid=4;
+
+select uid,name,location from user; for select perticular fields from user
+
+select*from user where!=condition; for select perticular fields from user isnot condition applied
+select*from user where location!=kspd;
+select*from user where age<20;
+select*from user where age>20;
+
+select*from user order by column; for selection of table by column
+ex: select*from user order by name;
+select*from user order by name desc;
+
+select count(uid), column from user group by column; for count of each values
+select coun(uid), emmail from user group by email;
+
+select*from user limit 3; for selection of limited groups
+select*from user limit 2;
+
+select min() from user;
+select max() from user;
+ex: select min(age) from user;
+    select max(age) from user;
+
+
+     select min(age) as minage from user; to change column name in output table
+
+     select max(age) as maxage from user;
+     select count(*) from user; from dispalys the total rows in table
+
+
+     select sum(age) from user; gives the total of ages which mentioned in table
+     select sum(age) from user where location='kspd'; for example
+    select avg(age) from user;
+    select avg(age) from user where location='kspd';
+     select*from user where location not in ('kspd');
+
+     select* from user where age between 18 and 35; 
+     select*from user where name like 'm%'; shows the values start with m
+      select*from user where name like 's%'; 
+      select*from user where name like's%i'; shows the result with the name starts with s and end with in
+
+      customer address 
+
+      some customer had one and address some customers had more than one address
+
+      create table customer(
+        cid int primary key auto_increment,
+        `name`varchar(256),
+        `phone` varchar(256),
+        `emial` varchar(256));
+
+create table address (`aid` int pimary key auto_increment, `address` varchar(256), `city` varchar(256),`pincode` int ,`cid` int
+ foreign key (aid) refercences customer(cid)
+);
+      
