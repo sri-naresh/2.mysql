@@ -1,8 +1,7 @@
 product
 pid name brand price color
 
-user
-uid, name phone email 
+
 
 user
 uid  name phone email age weight
